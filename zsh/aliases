@@ -9,7 +9,11 @@ alias rm='rm -iv'
 # ls
 alias l='ls'
 alias la='ls -A'
-alias ll='ls -lhF --color=auto --group-directories-first'
+if ls --group-directories-first > /dev/null 2>&1; then
+  alias ll='ls -lhF --color=auto --group-directories-first';
+else
+  alias ll='ls -lhF --color=auto';
+fi
 alias lla='ll -A'
 alias ld='ll | egrep ^d'
 alias lf='ll | egrep -v ^d'
