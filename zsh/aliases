@@ -1,33 +1,61 @@
 # cd
 alias ..='cd ..'
+alias ...='cd ..'
+alias cd..='cd ..'
+
+#rm
+alias rm='rm -iv'
 
 # ls
-alias ls="ls -F"
-alias l="ls -lAh"
-alias ll="ls -l"
+alias l='ls'
 alias la='ls -A'
+alias ll='ls -lhF --color=auto --group-directories-first'
+alias lla='ll -A'
+alias ld='ll | egrep ^d'
+alias lf='ll | egrep -v ^d'
+alias ldr='find . -mindepth 1 -type d -print0 | xargs -0 ls -ld | sed "s:./::"'
+
+# du
+alias dush='du -ks * | sort -nr | cut -f2 | xargs -d "\n" du -sh'
+alias dushr='du -k * | sort -nr | cut -f2 | xargs -d "\n" du -sh'
 
 # git
-alias gl='git pull'
-alias gp='git push'
-alias gd='git diff'
-alias gc='git commit'
-alias gca='git commit -a'
-alias gco='git checkout'
+alias ga='git add'
+alias gaa='git add .; git ci --amend'
+alias gi='git commit'
+alias gs='git status -s'
 alias gb='git branch'
-alias gs='git status'
+alias gs.='gs | grep -v "\.\."'
+alias gl='git log'
+alias gll='gl -n1'
+alias gl5='gl -n5'
+alias gd='git diff'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
-
-# rails
-alias sc='script/console'
-alias ss='script/server'
-alias sg='script/generate'
-alias a='autotest -rails'
-alias tlog='tail -f log/development.log'
-alias scaffold='script/generate nifty_scaffold'
-alias migrate='rake db:migrate db:test:clone'
-alias rst='touch tmp/restart.txt'
+alias gitrepos='locate -r .git\$ | sed "s/.\{5\}$//"'
 
 # commands starting with % for pasting from web
 alias %=' '
+
+# history
+alias hs='history'
+alias hst='history | tail -n25'
+
+# archive
+alias untar='tar -xf'
+
+# grep
+alias grep='grep --color'
+
+# gems
+alias gemserver='gem server -q --daemon'
+
+# ramaze
+alias rs='ramaze start -sthin -p80'
+
+# general
+alias reload='source ~/.bash_profile'
+alias pbcopy='putclip'
+alias pbpaste='getclip'
+alias trail='tail -f -n0'
+alias which='type -P'
