@@ -3,6 +3,8 @@
 --color-match=bold red
 
 --pager=less -R
+--smart-case
+--sort-files
 
 --type-set=haml=haml
 --type-set=sass=sass
