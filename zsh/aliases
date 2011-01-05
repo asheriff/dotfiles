@@ -3,7 +3,7 @@ alias ..='cd ..'
 alias ...='cd ..'
 alias cd..='cd ..'
 
-#rm
+# rm
 alias rm='rm -iv'
 
 # ls
@@ -63,3 +63,9 @@ alias pbcopy='putclip'
 alias pbpaste='getclip'
 alias trail='tail -f -n0'
 alias which='type -P'
+
+# cygwin stuff
+if [ Cygwin = "$(uname -o 2>/dev/null)" ]; then
+  alias cygup='$HOME/installers/cygwin.exe'
+  alias cygupup='curl http://cygwin.com/setup.exe >| $HOME/installers/cygwin.exe'
+fi
