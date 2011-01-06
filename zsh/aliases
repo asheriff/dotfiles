@@ -15,9 +15,9 @@ else
   alias ll='ls -lhF --color=auto';
 fi
 alias lla='ll -A'
-alias ld='ll | egrep ^d'
-alias lf='ll | egrep -v ^d'
-alias ldr='find . -mindepth 1 -type d -print0 | xargs -0 ls -ld | sed "s:./::"'
+alias lsd='ll | egrep ^d'
+alias lsf='ll | egrep -v ^d'
+alias lsdr='find . -mindepth 1 -type d -print0 | xargs -0 ls -ld | sed "s:./::"'
 
 # du
 alias dush='du -ks * | sort -nr | cut -f2 | xargs -d "\n" du -sh'
