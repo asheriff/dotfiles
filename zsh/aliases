@@ -45,6 +45,12 @@ alias %=' '
 alias hs='history'
 alias hst='history | tail -n25'
 
+# locate
+alias loc='locate -b'
+alias locateh='loc -b --database="$HOME/.locatedb"'
+alias loch='locateh'
+alias updatedbh='updatedb --output="$HOME/.locatedb" --localpaths="$HOME/"'
+
 # archive
 alias untar='tar -xf'
 
