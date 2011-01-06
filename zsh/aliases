@@ -74,4 +74,8 @@ alias which='type -P'
 if [ Cygwin = "$(uname -o 2>/dev/null)" ]; then
   alias cygup='$HOME/installers/cygwin.exe'
   alias cygupup='curl http://cygwin.com/setup.exe >| $HOME/installers/cygwin.exe'
+  
+  mate() { /cygdrive/c/Program\ Files\ \(x86\)/e/e.exe $1 & }
+  alias e='mate'
+  alias ee='/cygdrive/c/Program\ Files\ \(x86\)/e/cmd/e.exe'
 fi
