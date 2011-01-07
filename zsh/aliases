@@ -74,8 +74,28 @@ alias which='type -P'
 if [ Cygwin = "$(uname -o 2>/dev/null)" ]; then
   alias cygup='$HOME/installers/cygwin.exe'
   alias cygupup='curl http://cygwin.com/setup.exe >| $HOME/installers/cygwin.exe'
+fi
+
+# e-texteditor
+program_files='/cygdrive/c/Program Files'
+program_files_86='/cygdrive/c/Program Files (x86)'
+
+dir_e="e/cmd/e.exe"
+
+if   [[ -f "$program_files/$dir_e" ]]; then
+  exe_e="$program_files/$dir_e"
+elif [[ -f "$program_files_86/$dir_e" ]]; then
+  exe_e="$program_files_86/$dir_e"
+else
+  exe_e=0
+fi
+
+if [ -f "$exe_e" ]; then
+  mate() { ("$exe_e" $1 &) }
   
-  mate() { /cygdrive/c/Program\ Files\ \(x86\)/e/e.exe $1 & }
   alias e='mate'
-  alias ee='/cygdrive/c/Program\ Files\ \(x86\)/e/cmd/e.exe'
+  alias ee="${exe_e// /\\ }"
+else
+  alias e='vim'
+  alias ee='echo'
 fi
