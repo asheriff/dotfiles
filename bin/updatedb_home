@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+home_dir="$HOME"
+
+tmp=`mktemp`
+var=`updatedb --localpaths="$home_dir" --output="$home_dir/.locatedb" 2> $tmp`
+err=`cat $tmp`
+
+if [ "$err" != "" ]; then
+  echo "$(date) ERROR: Unable to update .loctedb for $home_dir" >&2
+  echo "$err" | sed 's/^/# /g' >&2
+  exit 1
+else
+  echo "$(date) Updated .loctedb for $home_dir"
+  exit 0
+fi
