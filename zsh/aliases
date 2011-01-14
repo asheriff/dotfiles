@@ -70,6 +70,9 @@ alias pbpaste='getclip'
 alias trail='tail -f -n0'
 alias which='type -P'
 
+# ruby
+alias bacon='bacon -w -p'
+
 # cygwin stuff
 if [ Cygwin = "$(uname -o 2>/dev/null)" ]; then
   alias cygup='$HOME/installers/cygwin.exe'
