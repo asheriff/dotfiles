@@ -34,6 +34,7 @@ alias gl='git log'
 alias gll='gl -n1'
 alias gl5='gl -n5'
 alias gd='git diff'
+alias gds='git diff --staged'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
 alias gitrepos='locate -r .git\$ | sed "s/.\{5\}$//"'
@@ -69,6 +70,9 @@ alias pbcopy='putclip'
 alias pbpaste='getclip'
 alias trail='tail -f -n0'
 alias which='type -P'
+
+# ruby
+alias bacon='bacon -w -p'
 
 # cygwin stuff
 if [ Cygwin = "$(uname -o 2>/dev/null)" ]; then

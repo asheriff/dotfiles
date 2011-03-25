@@ -1,0 +1,57 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+
+options = {}
+
+OptionParser.new do |opts|
+  opts.banner = <<EOS_BANNER
+Cleans up e-texteditor changing of file modes. Works with git only.
+
+Usage: #{__FILE__.sub(/.*\/(.*)/, '\1')} [OPTIONS]
+  
+EOS_BANNER
+
+  opts.on("-d", "--dryrun", "Dry run, don't change anything") do |v|
+    options[:dryrun] = v
+  end
+  
+  opts.on("-q", "--quiet", "No noisy output") do |v|
+    options[:quiet] = v
+  end
+  
+end.parse!
+
+
+files = %x(
+  (git diff --staged --summary && git diff --summary) \
+  | grep 'mode change' \
+  | sort -u
+).to_a.map do |s|
+  s.sub(/\s+mode change\s+/,'').
+    sub(/\s=> \d+/, '')
+end
+
+files.each do |f|
+  _, mode, file =* f.match( /\d{2}(\d{4}) (.*)/ )
+  
+  if !mode || !file
+    $stderr.puts "Error: #{mode} or #{file} broke!"
+    continue
+  end
+  
+  unless File.exist? file
+    puts "Error: #{file} doesn't exist!"
+    continue
+  end
+  
+  puts "changing mode #{mode} #{file}" unless options[:quiet]
+  
+  unless options[:dryrun]
+    begin
+      File.chmod( Integer(mode), file )
+    rescue
+      $stderr.puts "Error: unable to chmod #{mode} #{file}"
+    end
+  end
+end

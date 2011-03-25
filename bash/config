@@ -19,5 +19,5 @@ if [[ -f ~/.dir_colors ]]; then
   eval "`dircolors -b ~/.dir_colors`"
 fi
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
