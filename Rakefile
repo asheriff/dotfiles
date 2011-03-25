@@ -1,8 +1,27 @@
 require 'rake'
 require 'erb'
+require 'open-uri'
+
+conf = {
+  :opdir => "./opera"
+}
+
+namespace :up do
+  desc "updates opera url filter file"
+  task :opera do
+    opdir = conf[:opdir]
+    Dir.mkdir(opdir) unless File.exist?(opdir)
+    
+    puts "downloading urlfilter.ini > #{opdir}/urlfilter.ini"
+    cmd = "curl http://secure.fanboy.co.nz/adblock/opera/urlfilter.ini 2> /dev/null >| #{opdir}/urlfilter.ini"
+    %x(#{cmd})
+  end
+end
 
 desc "install the dot files into user's home directory"
 task :install do
+  Rake::Task['up:opera'].invoke
+  
   replace_all = false
   Dir['*'].each do |file|
     next if %w[Rakefile README.rdoc LICENSE].include? file
