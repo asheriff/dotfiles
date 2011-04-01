@@ -1357,7 +1357,7 @@ sub get_command_line_options {
         o                       => sub { $opt{output} = '$&' },
         'output=s'              => \$opt{output},
         'pager=s'               => \$opt{pager},
-        'nopager'               => sub { $opt{pager} = undef },
+        'P|nopager'             => sub { $opt{pager} = undef },
         'passthru'              => \$opt{passthru},
         'print0'                => \$opt{print0},
         'Q|literal'             => \$opt{Q},
