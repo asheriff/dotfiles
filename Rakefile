@@ -9,12 +9,22 @@ conf = {
 namespace :up do
   desc "updates opera url filter file"
   task :opera do
+    url = "http://secure.fanboy.co.nz/adblock/opera/urlfilter.ini"
     opdir = conf[:opdir]
-    Dir.mkdir(opdir) unless File.exist?(opdir)
+    file_path = "#{opdir}/urlfilter.ini"
     
-    puts "downloading urlfilter.ini > #{opdir}/urlfilter.ini"
-    cmd = "curl http://secure.fanboy.co.nz/adblock/opera/urlfilter.ini 2> /dev/null >| #{opdir}/urlfilter.ini"
-    %x(#{cmd})
+    print "download #{url}? [yn] "
+    
+    case $stdin.gets.chomp
+    when 'y'
+      Dir.mkdir(opdir) unless File.exist?(opdir)
+      
+      puts "downloading urlfilter.ini > #{file_path}"
+      cmd = "curl #{url} 2> /dev/null >| #{file_path}"
+      %x(#{cmd})
+    else
+      puts "skipping #{url}"
+    end
   end
 end
 
