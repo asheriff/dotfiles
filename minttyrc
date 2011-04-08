@@ -1,7 +1,7 @@
 CursorType=1
 Font=Lucida Console
 RightClickAction=1
-Transparency=2
+Transparency=0
 OpaqueWhenFocused=1
 FontHeight=9
 BoldAsColour=1
@@ -11,3 +11,4 @@ Columns=110
 Rows=48
 ClicksPlaceCursor=0
 Term=xterm-256color
+BoldAsFont=0
