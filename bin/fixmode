@@ -1,5 +1,11 @@
 #!/usr/bin/env ruby
 
+class String
+  unless "".respond_to? :lines
+    alias_method :lines, :to_a
+  end
+end
+
 require 'optparse'
 
 options = {}
@@ -27,7 +33,7 @@ files = %x(
   (git diff --staged --summary && git diff --summary) \
   | grep 'mode change' \
   | sort -u
-).to_a.map do |s|
+).lines.map do |s|
   s.sub(/\s+mode change\s+/,'').
     sub(/\s=> \d+/, '')
 end
