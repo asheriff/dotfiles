@@ -6,6 +6,8 @@
 --smart-case
 --sort-files
 
+--text
+
 --type-set=haml=haml
 --type-set=sass=sass
 --type-set=style=sass,css
