@@ -11,5 +11,6 @@ function railsapp {
 # misc
 alias reload='. ~/.bash_profile'
 alias 7zip='p7zip'
-alias todo="ack '\b(TODO|PENDING|BUG|IMPROVE|FIXME|DELETEME)\b' --nopager"
+alias todo="ack '\b(TODO|PENDING|BUG|IMPROVE|FIX(ME)?|DELETE(ME)?)\b' --nopager"
+alias ffind="ack -faP"
 
