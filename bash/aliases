@@ -11,6 +11,11 @@ function railsapp {
 # misc
 alias reload='. ~/.bash_profile'
 alias 7zip='p7zip'
-alias todo="ack '\b(TODO|PENDING|BUG|IMPROVE|FIX(ME)?|DELETE(ME)?)\b' --nopager"
-alias ffind="ack -faP"
+alias todo="ack '\b(TODO|PENDING|BUG|IMPROVE|DRY|FIX(ME)?|DELETE(ME)?):' --nopager"
+alias tls="~/.bin/todo.sh -t"
+alias t="tls"
+alias findf="ack -faP"
+alias findd="find -type d | grep -v /.svn | sort"
+alias finda="find | grep -v /.svn | sort"
 
+alias svnd="svn diff | colordiff | less -R"
