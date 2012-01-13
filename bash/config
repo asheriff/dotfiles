@@ -15,6 +15,9 @@ fi
 export PAGER='less'
 export EDITOR='vi'
 
+shopt -s histappend
+PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
+
 export HISTCONTROL="ingnorespace:erasedups"
 export HISTIGNORE="l:ll:la:ld:lla:lf:ls:exit:cd:..:pwd:hs:hst:cal:e .:gs:gl:gl5:gd:ga ."
 export HISTSIZE=5000
