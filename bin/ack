@@ -1200,6 +1200,7 @@ BEGIN {
         '.hg'               => 'Mercurial',
         '.pc'               => 'quilt',
         '.svn'              => 'Subversion',
+        '.sass-cache'       => 'SASS cache',
         _MTN                => 'Monotone',
         blib                => 'Perl module building',
         CVS                 => 'CVS',

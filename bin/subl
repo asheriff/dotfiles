@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+~/apps/sublime/sublime_text $* 2> /dev/null
+
