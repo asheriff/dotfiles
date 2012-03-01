@@ -17,4 +17,6 @@
 --type-set=vc=.svn,.git,.CVS,.RCS,.bzr,.hg
 --type-set=img=.png,.gif,.jpg,.jpeg
 --type-set=csv=.csv,.xls
+--type-set=web=.sass,.css,.js,.php,html,.htm
+--type-set=patch=.rej,.orig
 
