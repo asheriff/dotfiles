@@ -66,10 +66,13 @@ alias rs='ramaze start -sthin -p80'
 
 # general
 alias reload='source ~/.bash_profile'
-alias pbcopy='putclip'
-alias pbpaste='getclip'
 alias trail='tail -f -n0'
 alias which='type -P'
+
+# copy+paste
+hash pbcopy 2>&-  || alias pbcopy='putclip'
+hash pbcopy 2>&-  || alias pbcopy='xclip -selection c'
+hash pbpaste 2>&- || alias pbpaste='getclip'
 
 # ruby
 alias bacon='bacon -w -p'
