@@ -19,4 +19,5 @@
 --type-set=csv=.csv,.xls
 --type-set=web=.sass,.css,.js,.php,html,.htm
 --type-set=patch=.rej,.orig
+--type-set=ruby=.rb,.rhtml,.rjs,.rxml,.erb,.rake,.spec,.thor
 
