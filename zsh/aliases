@@ -7,7 +7,7 @@ alias cd..='cd ..'
 alias rm='rm -iv'
 
 # ls
-alias l='ls'
+alias l='ls --color=auto -F'
 alias la='ls -A'
 if ls --group-directories-first > /dev/null 2>&1; then
   alias ll='ls -lhF --color=auto --group-directories-first';
