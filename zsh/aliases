@@ -74,6 +74,10 @@ hash pbcopy 2>&-  || alias pbcopy='putclip'
 hash pbcopy 2>&-  || alias pbcopy='xclip -selection c'
 hash pbpaste 2>&- || alias pbpaste='getclip'
 
+# line endings
+hash dos2unix 2>&- || alias dos2unix='fromdos'
+hash unix2dos 2>&- || alias unix2dos='todos'
+
 # ruby
 alias bacon='bacon -w -p'
 
