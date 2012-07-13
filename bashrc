@@ -19,3 +19,4 @@ if [ -e ~/.rbenv ]; then
   eval "$(rbenv init -)"
 fi
 
+export PATH="/opt/arm-2009q1/bin:$PATH"
