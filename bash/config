@@ -19,7 +19,7 @@ shopt -s histappend
 PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
 
 unset HISTFILESIZE
-export HISTCONTROL="ingnorespace:erasedups"
+export HISTCONTROL="ignoredups:ingnorespace:erasedups"
 export HISTIGNORE="l:ll:la:ld:lla:lf:ls:exit:cd:..:pwd:hs:hst:cal:e .:gs:gl:gl5:gd:ga ."
 export HISTSIZE=50000
 

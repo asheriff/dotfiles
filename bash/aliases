@@ -21,6 +21,8 @@ alias finda="find | grep -v /.svn | sort"
 alias snv="svn"
 alias svnd="svn diff | colordiff | less -R"
 alias svnlc="svn log --stop-on-copy"
+alias svns="snv st"
+alias svnst="snv st"
 alias cdr="colordiff | less -R"
 alias lessc="/usr/share/vim/vim72/macros/less.sh"
 
