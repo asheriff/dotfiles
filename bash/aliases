@@ -13,16 +13,26 @@ alias reload='. ~/.bash_profile'
 alias 7zip='p7zip'
 alias todo="ack '\b(TODO|PENDING|BUG|IMPROVE|DRY|FIX(ME)?|DELETE(ME)?):' --nopager"
 alias tls="~/.bin/todo.sh -t"
+alias td="tls"
 alias t="tls"
 alias findf="ack -faP"
 alias findd="find -type d | grep -v /.svn | sort"
 alias finda="find | grep -v /.svn | sort"
 
+# svn
 alias snv="svn"
+alias svni="svn info"
+alias svnl="svn log"
+alias svnu="svn up"
+alias svnm="svn mergeinfo"
 alias svnd="svn diff | colordiff | less -R"
 alias svnlc="svn log --stop-on-copy"
 alias svns="snv st"
 alias svnst="snv st"
+alias svnc="svn status | grep -P '^(?=.{0,6}C)'"
+
 alias cdr="colordiff | less -R"
 alias lessc="/usr/share/vim/vim72/macros/less.sh"
 
+# applications
+alias foxit='FoxitReader'
