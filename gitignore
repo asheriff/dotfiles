@@ -5,3 +5,5 @@
 .*.swp
 .eprj
 .sass-cache
+*.sublime-project
+*.sublime-workspace
