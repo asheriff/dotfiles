@@ -8,9 +8,9 @@ if [ -f ~/.profile ]; then
   source ~/.profile
 fi
 
-# use .localrc for settings specific to one system
-if [ -f ~/.localrc ]; then
-  source ~/.localrc
+# use .bashrc_local for settings specific to one system
+if [ -f ~/.bashrc_local ]; then
+  source ~/.bashrc_local
 fi
 
 # Ruby rbenv stuff
