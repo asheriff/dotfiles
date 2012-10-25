@@ -7,7 +7,7 @@ function parse_git_branch {
 }
 
 function vng_bitbake_env {
-    if [ -z "${MACHINE}" ] || [ -z "${VAD_SCM_OBJ}" ]; then
+    if [ -z "${MACHINE}" ] && [ -z "${VAD_SCM_OBJ}" ]; then
         echo "";
     else
         echo "\[\e[1;30;1m\]{$MACHINE $VAD_SCM_OBJ}\[\e[0m\]"
