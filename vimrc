@@ -1,8 +1,5 @@
 " based on http://github.com/jferris/config_files/blob/master/vimrc
 
-
-set t_Co=256
-
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
@@ -208,5 +205,3 @@ function! OpenURL()
 endfunction
 map <Leader>w :call OpenURL()<CR>
 
-highlight OverLength ctermbg=darkred ctermfg=white guibg=#333333
-match OverLength /\%79v.\+/
