@@ -7,3 +7,5 @@
 .sass-cache
 *.sublime-project
 *.sublime-workspace
+nohup.out
+bin/jq
