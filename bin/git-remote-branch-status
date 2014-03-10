@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+for REMOTE in $(git branch -a | grep remotes/origin | grep -v 'HEAD\|master' | sed 's/^  //'); do
+    remote_status=$(test -z "$(git log upstream/master..$REMOTE)" && echo M $REMOTE || echo U $REMOTE)
+    echo $remote_status | sed 's|remotes/origin/||'
+done

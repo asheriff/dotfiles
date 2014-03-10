@@ -19,3 +19,9 @@ if [ -e ~/.rbenv ]; then
   eval "$(rbenv init -)"
 fi
 
+if type grunt > /dev/null 2>&1; then
+  eval "$(grunt --completion=bash)"
+fi
+
+
+eval "$(gulp --completion=bash)"

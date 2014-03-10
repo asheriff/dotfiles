@@ -2,6 +2,7 @@
 .svn
 .CVS
 *~
+~*
 .*.swp
 .eprj
 .sass-cache
@@ -9,3 +10,7 @@
 *.sublime-workspace
 nohup.out
 bin/jq
+Thumbs.db
+.rbenv-version
+libpeerconnection.log
+.grunt
