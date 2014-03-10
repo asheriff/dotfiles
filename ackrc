@@ -9,7 +9,7 @@
 --type-set=haml=.haml
 --type-set=img=.png,.gif,.jpg,.jpeg
 --type-set=sass=.sass
---type-set=style=.sass,.css
+--type-set=style=.sass,.css,.styl
 --type-set=asp=.asp,.aspx,.ascx
 --type-set=view=.asp,.aspx,.ascx,.haml,.html
 --type-set=cs=.cs
@@ -17,8 +17,16 @@
 --type-set=vc=.svn,.git,.CVS,.RCS,.bzr,.hg
 --type-set=img=.png,.gif,.jpg,.jpeg
 --type-set=csv=.csv,.xls
---type-set=web=.sass,.css,.js,.php,html,.htm
+--type-set=web=.sass,.css,.styl,.js,.json,.php,html,.htm
 --type-set=patch=.rej,.orig
 --type-set=ruby=.rb,.rhtml,.rjs,.rxml,.erb,.rake,.spec,.thor
 --type-set=spec=.spec.rb
 --type-set=bbr=.bb,.inc
+--type-set=json=.json
+
+--ignore-dir=.tmp
+--ignore-dir=.grunt
+--ignore-dir=node_modules
+--ignore-dir=vendor
+--ignore-dir=env
+--ignore-dir=tmpbuild
