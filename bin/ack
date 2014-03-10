@@ -1362,7 +1362,7 @@ sub get_command_line_options {
         'output=s'              => \$opt{output},
         'pager=s'               => \$opt{pager},
         'P|nopager'             => sub { $opt{pager} = undef },
-        'passthru'              => \$opt{passthru},
+        'T|passthru'            => \$opt{passthru},
         'print0'                => \$opt{print0},
         'Q|literal'             => \$opt{Q},
         'r|R|recurse'           => sub { $opt{n} = 0 },
