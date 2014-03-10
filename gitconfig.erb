@@ -12,14 +12,22 @@
 	co = checkout
 	ls = ls-files
 	list = ls-files
+  lsin = diff --name-only
 	st = status
+  stc = diff --name-only --diff-filter=U
   lg = log  --pretty=format:'%Cred%h%Cgreen %ci%Creset %s'
+  lg1 = log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+  lg2 = log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)— %an%C(reset)' --abbrev-commit
+  graph = log --graph
   wc = whatchanged
 	diff = diff -w
 	dif = diff
 	pick = cherry-pick
   headtag = describe --exact-match --tags HEAD
   update-server = update-server-info
+  unpack-refs = "!bash -c 'IFS=$''\\n''; for f in $(git show-ref --heads); do /bin/echo ''Writing  '' $(echo $f | cut -c42-); echo $(echo $f | cut -c1-40) > \"${GIT_DIR:-.git}/$(echo $f | cut -c42-)\"; done'"
+  rev = rev-parse
+  oldest-ancestor = !bash -c 'diff --old-line-format='' --new-line-format='' <(git rev-list --first-parent "${1:-master}") <(git rev-list --first-parent "${2:-HEAD}") | head -1' -
 [color]
 	branch = auto
 	diff = auto
