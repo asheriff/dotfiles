@@ -28,9 +28,12 @@ alias ga='git add'
 alias gaa='git add .; git ci --amend'
 alias gi='git commit'
 alias gs='git status -s'
+alias gsl="git status -s | awk '{print \$2}'"
 alias gb='git branch'
 alias gs.='gs | grep -v "\.\."'
 alias gl='git log'
+alias glu='git log up/master..'
+alias gdu='git diff up/master...'
 alias gll='gl -n1'
 alias gl5='gl -n5'
 alias gd='git diff'
@@ -103,7 +106,7 @@ fi
 
 if [ -f "$exe_e" ]; then
   mate() { ("$exe_e" $1 &) }
-  
+
   alias e='mate'
   alias ee="${exe_e// /\\ }"
 else
