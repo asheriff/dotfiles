@@ -11,7 +11,7 @@ function railsapp {
 # misc
 alias reload='. ~/.bash_profile'
 alias 7zip='p7zip'
-alias todo="ack '\b(TODO|PENDING|BUG|IMPROVE|DRY|FIX(ME)?|DELETE(ME)?):' --nopager"
+alias todo="ack '\b(TODO|TEMP|PENDING|BUG|IMPROVE|DRY|FIX(ME)?|DELETE(ME)?):' --nopager"
 alias tls="~/.bin/todo.sh -t"
 alias td="tls"
 alias t="tls"
@@ -36,3 +36,8 @@ alias lessc="/usr/share/vim/vim72/macros/less.sh"
 
 # applications
 alias foxit='FoxitReader'
+alias sgrab='xfce4-screenshooter --save .'
+alias sgr='sgrab --region'
+alias sgw='sgrab --window --delay 2'
+alias sgf='sgrab --fullscreen'
+alias fiddler='/usr/local/lib/fiddler/Fiddler.exe'
