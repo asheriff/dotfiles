@@ -7,3 +7,8 @@ hash thor 2>&- && {
     complete -C ~/.bash/completion_scripts/thor_completion -o default thor
     source ~/.bash/completion_scripts/thor_completion
 }
+
+hash gulp 2>&- && {
+    complete -C ~/.bash/completion_scripts/gulp_completion -o default gulp
+    source ~/.bash/completion_scripts/gulp_completion
+}
