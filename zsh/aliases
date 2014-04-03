@@ -7,12 +7,16 @@ alias cd..='cd ..'
 alias rm='rm -iv'
 
 # ls
-alias l='ls --color=auto -F'
+if ls --color=auto > /dev/null 2>&1; then
+  alias l='ls --color=auto -F'
+else
+  alias l='ls -GF'
+fi
 alias la='ls -A'
 if ls --group-directories-first > /dev/null 2>&1; then
-  alias ll='ls -lhF --color=auto --group-directories-first';
+  alias ll='ls -lhF --color=auto --group-directories-first'
 else
-  alias ll='ls -lhF --color=auto';
+  alias ll='ls -lhFG'
 fi
 alias lla='ll -A'
 alias lsd='ll | egrep ^d'
@@ -65,7 +69,7 @@ alias grep='grep --color'
 alias gemserver='gem server -q --daemon'
 
 # ramaze
-alias rs='ramaze start -sthin -p80'
+hash ramaze 2>&= && alias rs='ramaze start -sthin -p80'
 
 # general
 alias reload='source ~/.bash_profile'
