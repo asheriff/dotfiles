@@ -23,5 +23,6 @@ if type grunt > /dev/null 2>&1; then
   eval "$(grunt --completion=bash)"
 fi
 
-
 eval "$(gulp --completion=bash)"
+
+[ -s "/media/home/home/aarons/.nvm/nvm.sh" ] && . "/media/home/home/aarons/.nvm/nvm.sh" # This loads nvm

@@ -26,10 +26,11 @@ export EDITOR='vi'
 shopt -s histappend
 PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
 
-unset HISTFILESIZE
-export HISTCONTROL="ignoredups:ingnorespace:erasedups"
+export HISTCONTROL="ignoreboth:erasedups"
 export HISTIGNORE="l:ll:la:ld:lla:lf:ls:exit:cd:..:pwd:hs:hst:cal:e .:gs:gl:gl5:gd:ga ."
-export HISTSIZE=50000
+export HISTSIZE=
+export HISTFILESIZE=
+export HISTFILE=~/.bash_history_all
 
 if [[ -f ~/.dir_colors ]]; then
   eval "`dircolors -b ~/.dir_colors`"

@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+for ITEM in $(git stash list --format="%gd"); do
+  git stash show -p $ITEM | grep -H --label="$ITEM" "$@"
+done

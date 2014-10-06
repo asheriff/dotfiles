@@ -6,10 +6,12 @@
 --smart-case
 --sort-files
 
+--follow
+
 --type-set=haml=.haml
 --type-set=img=.png,.gif,.jpg,.jpeg
 --type-set=sass=.sass
---type-set=style=.sass,.css,.styl
+--type-set=style=.sass,.css,.styl,.scss
 --type-set=asp=.asp,.aspx,.ascx
 --type-set=view=.asp,.aspx,.ascx,.haml,.html
 --type-set=cs=.cs
@@ -26,7 +28,7 @@
 
 --ignore-dir=.tmp
 --ignore-dir=.grunt
---ignore-dir=node_modules
+# --ignore-dir=node_modules
 --ignore-dir=vendor
 --ignore-dir=env
 --ignore-dir=tmpbuild

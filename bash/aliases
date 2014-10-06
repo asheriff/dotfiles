@@ -8,6 +8,9 @@ function railsapp {
   rails $appname -m http://github.com/ryanb/rails-templates/raw/master/$template.rb $@
 }
 
+# safety
+alias mv='mv -i'
+
 # misc
 alias reload='. ~/.bash_profile'
 alias 7zip='p7zip'
@@ -15,9 +18,11 @@ alias todo="ack '\b(TODO|TEMP|PENDING|BUG|IMPROVE|DRY|FIX(ME)?|DELETE(ME)?):' --
 alias tls="~/.bin/todo.sh -t"
 alias td="tls"
 alias t="tls"
+alias tree="tree --dirsfirst"
 alias findf="ack -faP"
 alias findd="find -type d | grep -v /.svn | sort"
 alias finda="find | grep -v /.svn | sort"
+alias jh="jshint --verbose --reporter=/usr/local/lib/node_modules/jshint-stylish/stylish.js"
 
 # svn
 alias snv="svn"
@@ -41,3 +46,6 @@ alias sgr='sgrab --region'
 alias sgw='sgrab --window --delay 2'
 alias sgf='sgrab --fullscreen'
 alias fiddler='/usr/local/lib/fiddler/Fiddler.exe'
+
+# node execs
+alias mocha='mocha -R spec'
