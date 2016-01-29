@@ -49,3 +49,6 @@ alias fiddler='/usr/local/lib/fiddler/Fiddler.exe'
 
 # node execs
 alias mocha='mocha -R spec'
+
+# temp
+alias puml='java -jar ~/bin/plantuml.jar'

@@ -1,10 +1,17 @@
-if [[ -n $SSH_CONNECTION ]]; then
-  export PS1='%m:%3~$(git_info_for_prompt)%# '
-else
-  export PS1='%3~$(git_info_for_prompt)%# '
-fi
+NEWLINE=$'\n'
 
-export EDITOR='mate -w'
+function parse_git_branch {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  echo "[${ref#refs/heads/} $(git rev-parse --short HEAD)]"
+}
+
+autoload -U colors && colors
+
+if [[ -n $SSH_CONNECTION ]]; then
+  export PS1='${NEWLINE}%B%{$fg[red]%}%m%{$reset_color%} %B%{$fg[yellow]%}%~%{$reset_color%} %B%{$fg[cyan]%}$(parse_git_branch)%{$reset_color%} ${NEWLINE}\$ '
+else
+  export PS1='${NEWLINE}%B%{$fg[blue]%}%m%{$reset_color%} %B%{$fg[yellow]%}%~%{$reset_color%} %B%{$fg[cyan]%}$(parse_git_branch)%{$reset_color%} ${NEWLINE}\$ '
+fi
 
 fpath=(~/.zsh/functions $fpath)
 
@@ -41,4 +48,6 @@ bindkey '^[[5D' beginning-of-line
 bindkey '^[[5C' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^[^N' newtab
-bindkey '^?' backward-delete-char 
+bindkey '^?' backward-delete-char
+
+[ -s "/media/home/home/aarons/.nvm/nvm.sh" ] && . "/media/home/home/aarons/.nvm/nvm.sh" # This loads nvm

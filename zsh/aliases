@@ -29,15 +29,20 @@ alias gaa='git add .; git ci --amend'
 alias gi='git commit'
 alias gs='git status -s'
 alias gsl="git status -s | awk '{print \$2}'"
+alias gsln="git status -s | ack '^\?' | awk '{print \$2}'"
 alias gb='git branch'
 alias gs.='gs | grep -v "\.\."'
 alias gl='git log'
 alias glu='git log up/master..'
 alias gdu='git diff up/master...'
+alias glsu="git diff up/master.. --name-status | ack -v ^D | awk '{print \$2}'"
 alias gll='gl -n1'
 alias gl5='gl -n5'
 alias gd='git diff'
 alias gds='git diff --staged'
+alias gcoref='git reflog  | grep checkout | head'
+alias gcorefl='git reflog | grep checkout | awk '"'"'{print $6}'"'"' | awk '"'"'!x[$0]++'"'"' | head -n 10'
+alias gri='git rebase -i'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
 alias gitrepos='locate --regex /\\.git$ | sed "s/\/.git$//"'
@@ -47,6 +52,7 @@ alias %=' '
 
 # history
 alias hs='history'
+alias hsa='hs 1'
 alias hst='history | tail -n25'
 
 # locate
@@ -73,13 +79,13 @@ alias trail='tail -f -n0'
 alias which='type -P'
 
 # copy+paste
-hash pbcopy 2>&-  || alias pbcopy='putclip'
-hash pbcopy 2>&-  || alias pbcopy='xclip -selection c'
-hash pbpaste 2>&- || alias pbpaste='getclip'
+hash pbcopy 2>/dev/null  || alias pbcopy='putclip'
+hash pbcopy 2>/dev/null  || alias pbcopy='xclip -selection c'
+hash pbpaste 2>/dev/null || alias pbpaste='getclip'
 
 # line endings
-hash dos2unix 2>&- || alias dos2unix='fromdos'
-hash unix2dos 2>&- || alias unix2dos='todos'
+hash dos2unix 2>/dev/null || alias dos2unix='fromdos'
+hash unix2dos 2>/dev/null || alias unix2dos='todos'
 
 # ruby
 alias bacon='bacon -w -p'
