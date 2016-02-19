@@ -32,6 +32,8 @@ export HISTSIZE=
 export HISTFILESIZE=
 export HISTFILE=~/.bash_history_all
 
+hash gdircolors 2>/dev/null && alias dircolors='gdircolors'
+
 if [[ -f ~/.dir_colors ]]; then
   eval "`dircolors -b ~/.dir_colors`"
 fi
