@@ -21,13 +21,16 @@
 --type-set=ruby=.rb,.rhtml,.rjs,.rxml,.erb,.rake,.spec,.thor
 --type-set=sass=.sass,.scss
 --type-set=spec=.spec.rb,spec.js
---type-set=style=.sass,.css,.styl,.scss
+--type-set=style=.sass,.css,.styl,.scss,.less
 --type-set=uml=.uml
 --type-set=vc=.svn,.git,.CVS,.RCS,.bzr,.hg
 --type-set=view=.asp,.aspx,.ascx,.haml,.html,.hbs
 --type-set=web=.sass,.css,.styl,.js,.json,.php,html,.htm,.hbs
 --type-set=hbs=.hbs
 --type-set=vngjson=.json,.static
+--type-set=html=.html,.dust,.ftl
+--type-set=ftl=.ftl
+--type-set=dust=.dust
 
 --ignore-dir=.tmp
 --ignore-dir=.grunt
