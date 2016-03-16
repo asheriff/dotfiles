@@ -8,33 +8,46 @@
 
 --follow
 
---type-set=asp=.asp,.aspx,.ascx
---type-set=asp=.asp,.aspx,.ascx,.cs,.Master
---type-set=bbr=.bb,.inc
---type-set=cs=.cs
---type-set=csv=.csv,.xls
---type-set=haml=.haml
---type-set=img=.png,.gif,.jpg,.jpeg
---type-set=json=.json,.json
---type-set=md=.md,.markdown,.mdown,.mkd
---type-set=patch=.rej,.orig
---type-set=ruby=.rb,.rhtml,.rjs,.rxml,.erb,.rake,.spec,.thor
---type-set=sass=.sass,.scss
---type-set=spec=.spec.rb,spec.js
---type-set=style=.sass,.css,.styl,.scss,.less
---type-set=uml=.uml
---type-set=vc=.svn,.git,.CVS,.RCS,.bzr,.hg
---type-set=view=.asp,.aspx,.ascx,.haml,.html,.hbs
---type-set=web=.sass,.css,.styl,.js,.json,.php,html,.htm,.hbs
---type-set=hbs=.hbs
---type-set=vngjson=.json,.static
---type-set=html=.html,.dust,.ftl
---type-set=ftl=.ftl
---type-set=dust=.dust
-
 --ignore-dir=.tmp
 --ignore-dir=.grunt
 # --ignore-dir=node_modules
 --ignore-dir=vendor
 --ignore-dir=env
 --ignore-dir=tmpbuild
+
+
+# Images
+--type-set=img=.png,.gif,.jpg,.jpeg,.svg
+
+
+# Markup
+--type-set=dust=.dust
+--type-set=ftl=.ftl
+--type-set=haml=.haml
+--type-set=hbs=.hbs
+--type-set=t=.html,.htm,.dust,.ftl,.haml,.hbs
+
+
+# Style
+--type-set=less=.less
+--type-set=sass=.sass,.scss
+--type-set=style=.sass,.css,.styl,.scss,.less
+
+
+# Code
+--type-set=ruby=.rb,.rhtml,.rjs,.rxml,.erb,.rake,.spec,.thor
+--type-set=spec=.spec.rb,spec.js
+--type-set=web=.sass,.css,.styl,.less,.js,.json,.php,.html,.htm,.hbs,.dust
+--type-set=view=.asp,.aspx,.ascx,.haml,.html,.hbs
+--type-set=jss=.coffee, .js, .ts
+
+
+# Misc
+--type-set=asp=.asp,.aspx,.ascx,.cs,.Master
+--type-set=bbr=.bb,.inc
+--type-set=json=.json
+--type-set=md=.md,.markdown,.mdown,.mkd
+--type-set=patch=.rej,.orig
+--type-set=uml=.uml
+--type-set=vc=.svn,.git,.CVS,.RCS,.bzr,.hg
+--type-set=vngjson=.json,.static

@@ -12,11 +12,22 @@ alias rm='rm -iv'
 # ls
 alias l='ls --color=auto -F'
 alias la='ls -A'
+
+LL_OPTS=""
+
 if ls --group-directories-first > /dev/null 2>&1; then
-  alias ll='ls -lhF --color=auto --group-directories-first';
-else
-  alias ll='ls -lhF --color=auto';
+  LL_OPTS="$LL_OPTS --group-directories-first"
 fi
+
+if ls --color=auto > /dev/null 2>&1; then
+  LL_OPTS="$LL_OPTS --color=auto"
+else
+  LL_OPTS="$LL_OPTS -G"
+fi
+
+alias ll="ls -lhF $LL_OPTS"
+
+
 alias lla='ll -A'
 alias lsd='ll | egrep ^d'
 alias lsf='ll | egrep -v ^d'
@@ -36,9 +47,9 @@ alias gsln="git status -s | ack '^\?' | awk '{print \$2}'"
 alias gb='git branch'
 alias gs.='gs | grep -v "\.\."'
 alias gl='git log'
-alias glu='git log up/master..'
-alias gdu='git diff up/master...'
-alias glsu="git diff up/master.. --name-status | ack -v ^D | awk '{print \$2}'"
+alias glu='git log up/develop..'
+alias gdu='git diff up/develop...'
+alias glsu="git diff up/develop.. --name-status | ack -v ^D | awk '{print \$2}'"
 alias gll='gl -n1'
 alias gl5='gl -n5'
 alias gd='git diff'
@@ -93,11 +104,22 @@ hash unix2dos 2>/dev/null || alias unix2dos='todos'
 # ruby
 alias bacon='bacon -w -p'
 
+# open files
+hash x-www-browser 2>/dev/null || alias x-www-browser='open -a "Google Chrome"'
+
 # cygwin stuff
 if [ Cygwin = "$(uname -o 2>/dev/null)" ]; then
   alias cygup='$HOME/installers/cygwin.exe'
   alias cygupup='curl http://cygwin.com/setup.exe >| $HOME/installers/cygwin.exe'
 fi
+
+# javascript stuff
+alias jscs='jscs -v -m -1'
+alias jscsl='jscs -r unix'
+
+function jscsls {
+  jscs -r unix $@ | awk -F: '{print $1}' | sort -u | grep '.js$'
+}
 
 # e-texteditor
 program_files='/cygdrive/c/Program Files'

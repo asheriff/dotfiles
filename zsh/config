@@ -7,11 +7,11 @@ function parse_git_branch {
 
 autoload -U colors && colors
 
-if [[ -n $SSH_CONNECTION ]]; then
-  export PS1='${NEWLINE}%B%{$fg[red]%}%m%{$reset_color%} %B%{$fg[yellow]%}%~%{$reset_color%} %B%{$fg[cyan]%}$(parse_git_branch)%{$reset_color%} ${NEWLINE}\$ '
-else
-  export PS1='${NEWLINE}%B%{$fg[blue]%}%m%{$reset_color%} %B%{$fg[yellow]%}%~%{$reset_color%} %B%{$fg[cyan]%}$(parse_git_branch)%{$reset_color%} ${NEWLINE}\$ '
-fi
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export PS1='${NEWLINE}%B%{$fg[red]%}%m%{$reset_color%} %B%{$fg[yellow]%}%~%{$reset_color%} %B%{$fg[cyan]%}$(parse_git_branch)%{$reset_color%} ${NEWLINE}\$ '
+# else
+#   export PS1='${NEWLINE}%B%{$fg[blue]%}%m%{$reset_color%} %B%{$fg[yellow]%}%~%{$reset_color%} %B%{$fg[cyan]%}$(parse_git_branch)%{$reset_color%} ${NEWLINE}\$ '
+# fi
 
 fpath=(~/.zsh/functions $fpath)
 
@@ -50,4 +50,3 @@ bindkey '^[[3~' delete-char
 bindkey '^[^N' newtab
 bindkey '^?' backward-delete-char
 
-[ -s "/media/home/home/aarons/.nvm/nvm.sh" ] && . "/media/home/home/aarons/.nvm/nvm.sh" # This loads nvm

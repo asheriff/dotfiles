@@ -3,6 +3,13 @@ source ~/.bash/completions
 source ~/.bash/paths
 source ~/.bash/config
 
+# fancy git prompt
+if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
+	source ~/.bash-git-prompt/gitprompt.sh
+
+	GIT_PROMPT_ONLY_IN_REPO=1
+fi
+
 # use .profile mac ports stuff
 if [ -f ~/.profile ]; then
   source ~/.profile
@@ -25,4 +32,8 @@ fi
 
 eval "$(gulp --completion=bash)"
 
-[ -s "/media/home/home/aarons/.nvm/nvm.sh" ] && . "/media/home/home/aarons/.nvm/nvm.sh" # This loads nvm
+[ -s "~/.nvm/nvm.sh" ] && . "~/nvm.sh" # This loads nvm
+
+ulimit -n 2000
+
+export PATH=$HOME/.binctl:$PATH
