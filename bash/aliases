@@ -22,7 +22,7 @@ alias tree="tree --dirsfirst"
 alias findf="ack -faP"
 alias findd="find -type d | grep -v /.svn | sort"
 alias finda="find | grep -v /.svn | sort"
-alias jh="jshint --verbose --reporter=/usr/local/lib/node_modules/jshint-stylish/stylish.js"
+alias jh='jshint --verbose --reporter=$HOME/.nvm/versions/node/$(nvm current)/lib/node_modules/jshint-stylish/index.js'
 
 # svn
 alias snv="svn"

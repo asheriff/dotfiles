@@ -18,4 +18,4 @@ if type grunt > /dev/null 2>&1; then
   eval "$(grunt --completion=bash)"
 fi
 
-[ -s "/media/home/home/aarons/.nvm/nvm.sh" ] && . "/media/home/home/aarons/.nvm/nvm.sh" # This loads nvm
+[ -s "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"
